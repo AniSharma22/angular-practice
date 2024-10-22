@@ -1,0 +1,19 @@
+<div class="container mx-auto p-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    @for (product of productService.products(); track product.id) {
+      <div class="flex justify-center items-center">
+        <app-product 
+          appHover
+          [title]="product.title"
+          [price]="product.price"
+          [description]="product.description"
+          [id]="product.id"
+          [category]="product.category.name"
+          [imageUrl]="product.images[0]"
+          class="p-4"
+        >
+        </app-product>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<p-card
+  [header]="title()"
+  [subheader]="category()"
+  [style]="{ width: '360px' }"
+>
+  <ng-template pTemplate="header">
+    <div
+      class="w-full h-72 bg-gray-200 flex items-center justify-center rounded-t-lg"
+    >
+      <img
+        alt="Card"
+        [src]="imageUrl()"
+        class="w-full h-full object-cover rounded-t-lg"
+      />
+    </div>
+  </ng-template>
+
+  <p class="truncate" style="max-width: 340px">{{ description() }}</p>
+
+  <p class="font-bold text-lg text-gray-800 truncate" style="max-width: 340px">
+    Price: ₹ {{ price() | dataPipe }}
+  </p>
+
+  <ng-template pTemplate="footer">
+    <div class="flex gap-3 mt-1">
+      <p-button
+        label="Update"
+        [routerLink]="'/update/' + id()"
+        severity="secondary"
+        class="w-full"
+        styleClass="w-full"
+      />
+      <p-button
+        (onClick)="confirmDelete()"
+        label="Delete"
+        severity="danger"
+        class="w-full"
+        styleClass="w-full"
+      />
+    </div>
+  </ng-template>
+</p-card>

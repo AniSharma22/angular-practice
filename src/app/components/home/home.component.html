@@ -1,0 +1,13 @@
+<div>
+  <div class="flex justify-center items-center flex-col">
+    <h1 class="text-3xl font-bold mb-4">List of Products</h1>
+    <p-button
+      *isEligible="productService.activeRole()"
+      label="Add"
+      severity="info"
+      routerLink="/add"
+      class="mb-4"
+    ></p-button>
+  </div>
+  <app-product-list />
+</div>
